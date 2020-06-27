@@ -8,6 +8,17 @@
     function closeModalButton() {
         closeModal()
     }
+
+    $(function () {
+        $('#submitEdit').on('click', function (evt) {
+            evt.preventDefault();
+            $.post('User/EditUser', $('#formEditUser').serialize(), function () {
+                //alert('Posted using jQuery');
+
+                submited_form()
+            });
+        });
+    });
 </script>
 
 <form asp-action="EditUser" method="post" id="formEditUser">
@@ -32,6 +43,6 @@
             <input asp-for="@Model.Birthday" />
         </div>
 
-        <a class="action_good">Save</a>
+        <a class="action_good" id="submitEdit">Save</a>
     </div>
 </form>

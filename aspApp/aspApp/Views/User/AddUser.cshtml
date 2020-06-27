@@ -9,32 +9,19 @@
         closeModal()
     }
 
-    //function submit_formAddUser_OnClick() {
-    //    //submited_form()
-    //    //$(function () {
-    //    //    $('#formAddUser').on('submit', function (e) {
+    $(function () {
+        $('#submitAdd').on('click', function (evt) {
+            evt.preventDefault();
+            $.post('User/AddUser', $('#formAddUser').serialize(), function () {
+                //alert('Posted using jQuery');
 
-    //    //        $.ajax({
-    //    //            type: 'post',
-    //    //            url: 'User/AddUser/',
-    //    //            data: $('#formAddUser').serialize(),
-    //    //            success: function () {
-    //    //                alert("Email has been sent!");
-    //    //            }
-    //    //        });
-    //    //        e.preventDefault();
-    //    //    });
-    //    //});
-
-    //    submit_formAddUser()
-    //}
-
-    function submitedForm() {
-        submited_form()
-    }
+                submited_form()
+            });
+        });
+    });
 </script>
 
-<form asp-action="AddUser" method="post" id="formAddUser" onsubmit="return AjaxPost(this);">
+<form asp-action="AddUser" method="post" id="formAddUser">
     <div class="popup_div shadow-2 modal_none" id="modalAdd">
         <div>
             <a class="close_modal" onclick="closeModalButton()">X</a>
@@ -53,8 +40,6 @@
             <input asp-for="@Model.Birthday" />
         </div>
 
-        @*<a class="action_good" onclick="$("#myForm").submit();">Add</a>*@
-        @*<input class="action_good" type="submit" value="Add" />*@
-        <a class="action_good" onclick="submitedForm()">Add</a>
+        <a class="action_good" id="submitAdd">Add</a>
     </div>
 </form>

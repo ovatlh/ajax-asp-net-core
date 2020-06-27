@@ -10,7 +10,6 @@
     }
 
     function editUser_OnClick(reference) {
-        //var url = 'User/EditUser/' + reference.value;
         var url = '@Url.Action("EditUser", "User", new { id = "-1" })';
         url = url.replace("-1", reference);
 
@@ -18,7 +17,6 @@
     }
 
     function deleteUser_OnClick(reference) {
-        //var url = 'User/EditUser/' + reference.value;
         var url = '@Url.Action("DeleteUser", "User", new { id = "-1" })';
         url = url.replace("-1", reference);
 
@@ -59,7 +57,6 @@
                         <label for="">Birthday: @item.Birthday.ToString("dd - MMMM - yyyy")</label>
                     </div>
                     <div>
-                        @*<a onclick="editUser_OnClick('@Url.Action("EditUser", "User", item.Id)')">Edit</a>*@
                         <a onclick="editUser_OnClick(@item.Id)">Edit</a>
                         <a onclick="deleteUser_OnClick(@item.Id)">Delete</a>
                     </div>
