@@ -1,0 +1,19 @@
+﻿@{
+    ViewData["Title"] = "Index";
+    Layout = "_Layout";
+}
+
+<div class="main_div shadow back-primarycolor" id="main-container">
+
+</div>
+
+<div class="modal" id="modalRaiz">
+
+</div>
+
+<script src="~/js/site.js"></script>
+@*showInPopUp('@Url.Action("AddOrEdit", "User", null, Context.Request.Scheme)', 'New user!')*@
+<script>
+    //Load list user in index
+    loadUserList('@Url.Action("UserList", "User")')
+</script>

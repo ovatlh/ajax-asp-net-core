@@ -1,0 +1,38 @@
+﻿@model aspApp.Models.User
+
+@{
+    Layout = null;
+}
+
+<script>
+    function closeModalButton() {
+        closeModal()
+    }
+
+    function submit_formAddUser_OnClick() {
+        submit_formAddUser()
+    }
+</script>
+
+<form asp-action="AddUser" method="post" id="formAddUser">
+    <div class="popup_div shadow-2 modal_none" id="modalAdd">
+        <div>
+            <a class="close_modal" onclick="closeModalButton()">X</a>
+            <h5 class="title_modal">Add new User</h5>
+        </div>
+        <!-- <label for="">#: 1</label> -->
+        <!-- <label for="">Id: 1</label> -->
+        <div class="popup_items">
+            <label for="">Username:</label>
+            <input asp-for="@Model.Username" />
+            <label for="">Phone:</label>
+            <input asp-for="@Model.Phone" />
+            <label for="">eMail:</label>
+            <input asp-for="@Model.EMail" />
+            <label for="">Birthday:</label>
+            <input asp-for="@Model.Birthday" />
+        </div>
+
+        <a class="action_good" onclick="submit_formAddUser_OnClick()">Add</a>
+    </div>
+</form>

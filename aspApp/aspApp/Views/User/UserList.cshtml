@@ -1,0 +1,72 @@
+﻿@model IEnumerable<aspApp.Models.User>
+
+@{
+    int x = 1;
+}
+
+<script>
+    function addNewUser_OnClick() {
+        loadAddUser('@Url.Action("AddUser", "User")')
+    }
+
+    function editUser_OnClick(reference) {
+        //var url = 'User/EditUser/' + reference.value;
+        var url = '@Url.Action("EditUser", "User", new { id = "-1" })';
+        url = url.replace("-1", reference);
+
+        loadEditUser(url)
+    }
+
+    function deleteUser_OnClick(reference) {
+        //var url = 'User/EditUser/' + reference.value;
+        var url = '@Url.Action("DeleteUser", "User", new { id = "-1" })';
+        url = url.replace("-1", reference);
+
+        loadDeleteUser(url)
+    }
+</script>
+
+<div class="index_div_content">
+    <a class="action_add_new_user" onclick="addNewUser_OnClick()">Add new User</a>
+    <ul>
+        @*<li>
+                <div>
+                    <div>
+                        <label for="">#: 1</label>
+                        <label for="">Id: 1</label>
+                        <label for="">Username: 1</label>
+                        <label for="">Phone: 1</label>
+                        <label for="">eMail: 1</label>
+                        <label for="">Birthday: 1</label>
+                    </div>
+                    <div>
+                        <a href="edit">Edit</a>
+                        <a href="delete">Delete</a>
+                    </div>
+                </div>
+            </li>*@
+
+        @foreach (var item in Model)
+        {
+            <li>
+                <div>
+                    <div>
+                        <label for="">#: @x</label>
+                        <label for="">Id: @item.Id</label>
+                        <label for="">Username: @item.Username</label>
+                        <label for="">Phone: @item.Phone</label>
+                        <label for="">eMail: @item.EMail</label>
+                        <label for="">Birthday: @item.Birthday.ToString("dd - MMMM - yyyy")</label>
+                    </div>
+                    <div>
+                        @*<a onclick="editUser_OnClick('@Url.Action("EditUser", "User", item.Id)')">Edit</a>*@
+                        <a onclick="editUser_OnClick(@item.Id)">Edit</a>
+                        <a onclick="deleteUser_OnClick(@item.Id)">Delete</a>
+                    </div>
+                </div>
+            </li>
+
+            x++;
+        }
+    </ul>
+</div>  

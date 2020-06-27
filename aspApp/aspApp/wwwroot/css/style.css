@@ -1,0 +1,222 @@
+* {
+    margin: 0px;
+    padding: 0px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.shadow {
+    box-shadow: 0px 0px 3px 0px rgba(0, 0, 0, 0.1);
+}
+
+.shadow-2 {
+    box-shadow: 0px 0px 3px 0px rgba(0, 0, 0, 0.5);
+}
+
+.back-primarycolor {
+    background-color: white;
+}
+
+.back-darkcolor {
+    background-color: whitesmoke;
+}
+
+.pad-10 {
+    padding: 10px;
+}
+
+.header_div {
+}
+
+    .header_div h1 {
+        text-align: center;
+        pointer-events: none;
+    }
+
+.main_div {
+    margin: 20px auto;
+    width: 90%;
+    min-height: 100px;
+}
+
+.index_div_content {
+    background-color: transparent;
+}
+
+    .index_div_content ul {
+        list-style-type: none;
+        min-height: 50px;
+        overflow: auto;
+        padding: 10px 0px 5px 10px;
+    }
+
+        .index_div_content ul li {
+            display: block;
+            float: left;
+            width: auto;
+            min-width: calc(calc(100% / 6) - 25.5px);
+            padding: 10px;
+            margin: 0px 5px 5px 0px;
+            background-color: gainsboro;
+        }
+
+            .index_div_content ul li > div {
+                padding: 10px;
+            }
+
+            .index_div_content ul li label {
+                display: block;
+            }
+
+            .index_div_content ul li div:nth-child(2) {
+                background-color: green;
+                margin: 5px -10px -10px -10px;
+            }
+
+                .index_div_content ul li div:nth-child(2) a {
+                    display: block;
+                    text-decoration: none;
+                    color: white;
+                    float: left;
+                    width: calc(50% - 10px);
+                    text-align: center;
+                    padding: 10px 5px;
+                    cursor: pointer;
+                    transition: 0.3s;
+                }
+
+                    .index_div_content ul li div:nth-child(2) a:hover {
+                        transition: 0.3s;
+                        font-weight: bold;
+                    }
+
+                    .index_div_content ul li div:nth-child(2) a:nth-child(1) {
+                        background-color: darkblue;
+                    }
+
+                        .index_div_content ul li div:nth-child(2) a:nth-child(1):hover {
+                            background-color: blue;
+                        }
+
+                    .index_div_content ul li div:nth-child(2) a:nth-child(2) {
+                        background-color: darkred;
+                    }
+
+                        .index_div_content ul li div:nth-child(2) a:nth-child(2):hover {
+                            background-color: red;
+                        }
+
+.action_add_new_user {
+    display: block;
+    background-color: darkgreen;
+    padding: 10px;
+    color: white;
+    text-decoration: none;
+    text-align: center;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+    .action_add_new_user:hover {
+        background-color: green;
+        font-weight: bold;
+    }
+
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, .5);
+    display: none;
+}
+
+.modal_none {
+    display: none;
+}
+
+.popup_div {
+    margin: 20px auto;
+    padding: 10px;
+    min-width: auto;
+    max-width: 350px;
+    background-color: white;
+}
+
+    .popup_div > div:first-child {
+        border-bottom: 1px solid gray;
+        margin-bottom: 10px;
+    }
+
+.title_modal {
+    display: block;
+    text-align: center;
+    padding: 0px 0px 10px 0px;
+    margin: 0px 20px;
+}
+
+.close_modal {
+    background-color: whitesmoke;
+    text-decoration: none;
+    text-align: center;
+    font-size: 20px;
+    line-height: 30px;
+    width: 30px;
+    color: black;
+    float: right;
+    margin: -10px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+    .close_modal:hover {
+        background-color: darkred;
+        color: white;
+        font-weight: bold;
+    }
+
+.popup_div > a {
+    width: 100%;
+    line-height: 30px;
+    margin: 10px 0px 0px 0px;
+    text-align: center;
+    color: white;
+    text-decoration: none;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.action_good {
+    background-color: darkgreen;
+}
+
+    .action_good:hover {
+        background-color: green;
+        font-weight: bold;
+    }
+
+.action_bad {
+    background-color: darkred;
+}
+
+    .action_bad:hover {
+        background-color: red;
+        font-weight: bold;
+    }
+
+.popup_div * {
+    display: block;
+}
+
+.popup_items {
+    padding-right: 5px;
+    padding-bottom: 10px;
+}
+
+    .popup_items * {
+        display: block;
+        width: 100%;
+    }
+
+.footer_div {
+}
